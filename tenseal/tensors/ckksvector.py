@@ -170,6 +170,11 @@ class CKKSVector(AbstractTensor):
 
     def __imatmul__(self, *args, **kwargs) -> "CKKSVector":
         return self.mm_(*args, **kwargs)
+    
+    def max_el(self) -> "CKKSVector":
+        vector = ts.plain_tensor(self.data, dtype="float")
+        max_element = max(vector)
+        return self._wrap(max_element)
 
     @classmethod
     def _conv2d_im2col(cls, other):
