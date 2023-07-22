@@ -13,8 +13,8 @@ cmake_install="cmake-3.17.0-Linux-x86_64.sh"
 wget https://github.com/anwaybose/kitware_cmake_linux_3_17/blob/main/${cmake_install}
 sh ${cmake_install} --skip-license --prefix=/usr/local/ --exclude-subdir
 
-python -m pip install --upgrade pip
-pip install -r requirements_dev.txt
-pip install setuptools wheel twine auditwheel
+python3 -m pip install --upgrade pip
+pip3 install -r requirements_dev.txt
+pip3 install setuptools wheel twine auditwheel
 
 cmake --version
